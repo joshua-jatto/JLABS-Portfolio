@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIM Trainer</title>
+
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        background-color: antiquewhite;
+        background-image: url(../assets//cubes_structure_black_blue_120005_1366x768.jpg);
+        background-size: cover;
+        color: aqua;
+      }
+      .game {
+        width: 80vw;
+        height: 100vh;
+        position: relative;
+      }
+      .box {
+        display: none;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        position: absolute;
+        border-radius: 7px;
+        transition: 0.3s ease;
+        cursor: pointer;
+        background-image: url(../assets/JTLITE.png);
+        background-size: cover;
+        background-position: center;
+      }
+      .box:hover {
+        opacity: 80%;
+      }
+      .game-state {
+        width: 80%;
+        height: 60%;
+        background-color: rgba(127, 255, 212, 0.123);
+        margin: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 10px solid greenyellow;
+        border-radius: 30px;
+        font-size: 7em;
+        position: absolute;
+        top: 5vh;
+      }
+      button {
+        height: 40px;
+        width: 90px;
+        background: transparent;
+        display: block;
+        margin: 5px;
+        font-weight: bolder;
+        color: aqua;
+        border: 2px solid aquamarine;
+      }
+      .score {
+        font-size: 2em;
+        font-weight: 600;
+        transition: all 2s step-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game">
+      <div>
+        <p>Score:<span id="score"></span></p>
+        <button>Play</button>
+        <button class="pause">Pause</button>
+      </div>
+      <div class="box"></div>
+    </div>
+    <div class="game-state">AiM TRAINER V1.</div>
+
+    <script>
+      function _(type) {
+        return document.createElement(type);
+      }
+      function __(type) {
+        return document.querySelector(type);
+      }
+      const game = __(".game");
+      const box = __(".box");
+      const play = __("button");
+      const pause = __(".pause");
+      const gameState = __(".game-state");
+
+      function moveBox() {
+        const width = innerWidth - 100;
+        const height = innerHeight - 100;
+        const randomX = Math.round(Math.random() * width) + "px";
+        const randomY = Math.round(Math.random() * height) + "px";
+        box.style.left = randomX;
+        box.style.top = randomY;
+      }
+
+      play.addEventListener("click", () => {
+        box.style.display = "block";
+        gameState.style.display = "none";
+      });
+
+      pause.addEventListener("click", () => {
+        box.style.display = "none";
+        gameState.style.display = "flex";
+        gameState.innerText = "PAUSED";
+      });
+
+      setInterval(() => {
+        moveBox();
+      }, 1200);
+
+      let counter = 0;
+
+      box.addEventListener("click", () => {
+        const score = __("#score");
+        counter++;
+        score.innerHTML = counter;
+        moveBox();
+        console.log(counter);
+      });
+    </script>
+  </body>
+</html>
