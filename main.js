@@ -13,10 +13,10 @@ const nav = __('nav')
 
 
 function darkModeToggle() {
-    toggleMode.addEventListener('click', () => {
-        toggleMode.classList.toggle('active');
-        body.classList.toggle('active')
-    })
+
+    toggleMode.classList.toggle('active');
+    body.classList.toggle('active')
+
     console.log('toggled')
 }
 
@@ -36,7 +36,7 @@ let quoteMachine = [{
 },
 {
     quote: "How be it, It shall come to pass",
-    quoter: "Gloria Enamino"
+    quoter: "E. Gloria"
 },
 {
     quote: "...part of the journey is the end.",
@@ -99,26 +99,26 @@ const projectsContainer = __('.projects-container');
 //create prjects data
 const projectsData = [
     {
-        id:1,
-        title:'Aim Trainer',
-        imageSrc:'url(./assets/AimTrainer_Desktop.html.png)',
-        description:'Randomly click the box (shooter game concept)',
-        link:'./project-pages/project-1.html',
+        id: 1,
+        title: 'Aim Trainer',
+        imageSrc: 'url(./assets/AimTrainer_Desktop.html.png)',
+        description: 'Randomly click the box (shooter game concept)',
+        link: './project-pages/project-1.html',
     },
     {
-        id:2,
-        title:'Speedy Fabricator',
-        imageSrc:'url(./assets/Speedy-banner.png)',
-        description:'Aluminium window maker app for Engineers💪',
-        link:' https://joshua-jatto.github.io/JLABS-Speedy_ACP/',
+        id: 2,
+        title: 'Speedy Fabricator',
+        imageSrc: 'url(./assets/Speedy-banner.png)',
+        description: 'Aluminium window maker app for Engineers💪',
+        link: ' https://joshua-jatto.github.io/JLABS-Speedy_ACP/',
 
     },
     {
-        id:3,
-        title:'Rycipee-finder',
-        imageSrc:'url(./assets/Rycipee-banner.png)',
-        description:'Search recipes online😋',
-        link:'https://joshua-jatto.github.io/',
+        id: 3,
+        title: 'Rycipee-finder',
+        imageSrc: 'url(./assets/Rycipee-banner.png)',
+        description: 'Search recipes online😋',
+        link: 'https://joshua-jatto.github.io/Rycipee-finder/',
 
     },
     // {
@@ -133,8 +133,8 @@ const projectsData = [
 
 //initialize dynamic loading of data to ui
 projectsData.length > 0 ?
-projectsData.forEach(item => {
-    projectsContainer.innerHTML += `<a href=${item.link} target="_blank" class="project-card">
+    projectsData.forEach(item => {
+        projectsContainer.innerHTML += `<a href=${item.link} target="_blank" class="project-card">
     <div class="background" style="background-image:${item.imageSrc}">
       <div class="project-name">${item.title}</div>
       <div class="project-description">
@@ -142,7 +142,7 @@ projectsData.forEach(item => {
       </div>
     </div>
   </a>`
-    
-})
-:null
+
+    })
+    : null
 

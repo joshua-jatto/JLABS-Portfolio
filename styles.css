@@ -6,10 +6,10 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Comic Neue", cursive;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
 
-  font-weight: 400;
+  
 
 }
 
@@ -346,7 +346,6 @@ section {
 
 .bio p {
   font-size: 13uv;
-  font-weight: 300;
   word-spacing: 1.5px;
   line-height: 2em;
   margin: 5px;
