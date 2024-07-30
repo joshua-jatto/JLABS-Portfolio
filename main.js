@@ -47,7 +47,7 @@ let quoteMachine = [{
     quoter: " J. Rebecca"
 },
 {
-    quote: " Insist on wining",
+    quote: " Insist on winning",
     quoter: "O. Stephanie "
 },
 {
@@ -119,6 +119,14 @@ const projectsData = [
         imageSrc: 'url(./assets/Rycipee-banner.png)',
         description: 'Search recipes online😋',
         link: 'https://joshua-jatto.github.io/Rycipee-finder/',
+
+    },
+    {
+        id: 4,
+        title: 'Coming Soon',
+        imageSrc: 'url(./assets/JTHD.png)',
+        description: 'More project coming soon',
+        link: '/',
 
     },
     // {
