@@ -387,6 +387,8 @@ ul li {
 
 }
 
+
+
 .profile:hover {
   rotate: 0deg;
   transition: all 0.6s ease-in-out;
@@ -500,81 +502,105 @@ ul li {
 
 }
 
+/* Container holding the cards */
 .projects-container {
-  width: calc(100vw - 180px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 80vw;
   margin: 0 auto;
-  /* display: flex;
-  flex-direction: column;
-  gap: 1vh;
-  justify-content: center; */
-  position: relative;
-  top: 30px;
-  margin-bottom: 1rem;
-  height: auto;
 }
 
-.project-card {
-  width: 70%;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  box-shadow: 2px 6px 4px hsl(0deg 0% 0% / 0.4);
-  border-radius: 9px;
-  text-decoration: none;
-  height: 35vh;
-  overflow-y: hidden;
-  margin-bottom: .8em;
-
+/* Card styles */
+.card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.background {
+/* Image inside the card */
+.card-image {
+  height: 150px;
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
-  position: relative;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
-.project-card:hover {
-  background-color: antiquewhite;
-  border: 1px groove rgb(39, 2, 39);
-  opacity: 85%;
-  transition: .3s ease;
-}
-
-
-.project-name {
+/* Title inside the card */
+.card-title {
   font-size: 1.2em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  color: white;
-  background: linear-gradient(to bottom right, rgb(114, 28, 114), #010e18);
-  border-radius: px;
-  padding: 10px;
-  max-height: 80px;
-  top: 0;
-  padding-left: .8em;
+  margin-top: 10px;
 }
 
-.project-description {
-  position: relative;
-  text-align: left;
-  padding: 0px 20px;
-  top: 70%;
-  line-height: 1.6;
-  text-shadow: #18191a;
-  border-radius: 5px;
-  font-size: .8rem;
-  font-weight: 600;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  background-color: rgb(50, 1, 50);
-  opacity: 90%;
-  height: auto;
+/* Description inside the card */
+.card-description {
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #555;
 }
 
+/* Link inside the card */
+.card-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+/* Add some hover effects */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments with media queries */
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 768px) {
+  #product-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  
+  .card {
+    padding: 12px;
+  }
+
+  .card-title {
+    font-size: 1.1em;
+  }
+
+  .card-description {
+    font-size: 0.85em;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  #product-container {
+    grid-template-columns: 1fr; /* Stack cards on top of each other */
+  }
+  
+  .card {
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1em;
+  }
+
+  .card-description {
+    font-size: 0.8em;
+  }
+
+  .card-image {
+    height: 120px; /* Slightly smaller images for smaller screens */
+  }
+}
 
 footer {
 
@@ -617,3 +643,17 @@ footer {
   margin-top: 20px;
   font-weight: 500;
 }
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .project-container {
+      padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-container {
+      grid-template-columns: 1fr;
+      gap: 10px;
+  }
+} 
