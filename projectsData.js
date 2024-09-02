@@ -23,7 +23,7 @@ const projectsData = [
     {
       id: 4,
       title: "Emoji Store🏬",
-      imageSrc: "url(./assets/emoJiStore.png)",
+      imageSrc: "url(./assets/emojiStore.png)",
       description: "Reacts⚛ E-commerce store ",
       link: "https://joshua-jatto.github.io/Emoji-Ecommerce-App/",
     },
@@ -32,14 +32,14 @@ const projectsData = [
       title: "Coming Soon",
       imageSrc: "url(./assets/JTHD.png)",
       description: "More project coming soon",
-      link: "/",
+      link: "https://github.com/joshua-jatto",
     },
   
     // {
-    //     id:5, //update id count on next item
-    //     title:'Emoji Store🏬',
-    //     imageSrc:'url(./assets/emohiStore.png)',
-    //     description:'Reacts context E-commerce store',
+    //     id:6, //update id count on next item
+    //     title:'Journal APP📝',
+    //     imageSrc:'url(./assets/.png)',
+    //     description:'React⚛ CRUD Auth journal APP',
     //     link:'https://joshua-jatto.github.io/',
   
     // },
